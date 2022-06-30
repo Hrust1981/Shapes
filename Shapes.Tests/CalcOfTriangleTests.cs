@@ -5,25 +5,33 @@ namespace Shapes.Tests
     [TestClass]
     public class CalcOfTriangleTests
     {
-        [TestMethod]
-        public void CalcOfSquareTriangle_Tests()
+        CalcOfTriangle circle;
+
+        [TestInitialize]
+        public void Setup()
         {
             double a = 3, b = 4, c = 5;
-            double expected = 6;
+            circle = new CalcOfTriangle(a, b, c);
+        }
 
-            CalcOfTriangle circle = new CalcOfTriangle(a, b, c);
+        [TestCleanup]
+        public void Clean() { }
+
+        [TestMethod]
+        public void CalcOfSquareTriangle_Test()
+        {
+            double expected = 6;
+            
             var actual = circle.CalcOfSquare();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void IsRectangular_Tests()
+        public void IsRectangular_Test()
         {
-            double a = 3, b = 4, c = 5;
             bool expected = true;
 
-            CalcOfTriangle circle = new CalcOfTriangle(a, b, c);
             var actual = circle.IsRectangular();
 
             Assert.AreEqual(expected, actual);
