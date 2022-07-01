@@ -5,13 +5,13 @@ namespace Shapes.Tests
     [TestClass]
     public class CalcOfTriangleTests
     {
-        CalcOfTriangle circle;
+        CalcOfTriangle triangle;
 
         [TestInitialize]
         public void Setup()
         {
             double a = 3, b = 4, c = 5;
-            circle = new CalcOfTriangle(a, b, c);
+            triangle = new CalcOfTriangle(a, b, c);
         }
 
         [TestCleanup]
@@ -22,7 +22,7 @@ namespace Shapes.Tests
         {
             double expected = 6;
             
-            var actual = circle.CalcOfSquare();
+            var actual = triangle.CalcOfSquare();
 
             Assert.AreEqual(expected, actual);
         }
@@ -32,7 +32,7 @@ namespace Shapes.Tests
         {
             bool expected = true;
 
-            var actual = circle.IsRectangular();
+            var actual = triangle.IsRectangular();
 
             Assert.AreEqual(expected, actual);
         }
